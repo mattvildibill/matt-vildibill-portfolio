@@ -3,9 +3,9 @@
 ## Recruiter perspective
 
 - Name and engineering focus appear in the first viewport.
-- Two runnable projects lead; each explains the experience before technical details.
+- All six runnable projects appear in the visual gallery before the shared workbench; each leads with its purpose.
 - Primary demo actions and source links are adjacent.
-- Four incomplete source exports are clearly separated and labeled; no fictional screenshots, stacks, or performance claims.
+- The four incomplete GitHub exports were recovered from original hosted source; source provenance and thumbnail origins are documented.
 - No speculative employer, contact address, credentials, or resume content.
 
 ## Senior engineer perspective
@@ -23,7 +23,7 @@
 - Desktop plus 390px and 320px viewport review; responsive stack and narrow-screen control spacing.
 - Semantic headings and links, skip navigation, keyboard tabs, focus treatment, pause control, and reduced-motion startup behavior.
 - Technical details are progressive disclosures rather than walls of text.
-- Demo applications open separately, keeping the portfolio easy to return to.
+- Demo applications launch in one shared frame with restart, close, fullscreen, and separate-tab options. Only one runtime mounts at a time.
 
 ## Verification and limits
 
@@ -34,3 +34,16 @@
 - Browser WebGL is disabled in this environment: Gravity's full 3D rendering could not be visually certified. Its graceful failure state was observed; the portfolio's Canvas 2D preview was visually tested. A WebGL-enabled browser is required for the full lab.
 - No real-phone touch testing or full screen-reader audit; no claim that all source projects have production-level test coverage.
 - Live F1 APIs were not load-tested or used to validate external race facts.
+
+## Six-project expansion verification
+
+- Actual Fabric simulator: walkthrough, Explore, and pause control exercised; software renderer visible inside the portfolio iframe.
+- Fort Collins: Green streets and Compare switch to a defined scenario and show the comparison slider, including in aerial fallback mode.
+- Painted Worlds: fallback painting collection, search filtering to Lily Lake, and full artwork dialog exercised.
+- Denver: full embedded data resolves into the footprint fallback; source interaction harness passes after extracting its documented runtime cache.
+- Painted Worlds experience verification passes (settings, source-frame fitting, tour progress, collection filters).
+- Fort Collins validator passes (geographic assets, scenario composition/negation, geometry orientation and protected buildings).
+- Switching and closing were checked: the previous iframe is removed, with zero frames before a new launch.
+- Browser lacks WebGL; GPU rendering of the three worlds is included but was not visually re-certified. Native fallbacks were observed.
+
+- GitHub asset bundle restore tested in a clean folder: all 388 unpacked files match the published source byte-for-byte, with a successful cached second run. Dev/build invoke the Node-only restorer automatically.

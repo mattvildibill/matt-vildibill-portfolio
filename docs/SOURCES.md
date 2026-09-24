@@ -31,4 +31,4 @@ The F1 preview is a real screenshot of that simulator at lap 28, not live timing
 - F1 estimated ERS: `src/hooks/useErsEstimator.ts`
 - F1 championship feed: `src/hooks/useJolpica.ts`
 
-Gravity documents ChatGPT-assisted development. No employment history, impact metrics, adoption counts, or unaided-authorship claims were invented. The four README-only projects are presented explicitly as descriptions, not verified implementations.
+Gravity documents ChatGPT-assisted development. No employment history, impact metrics, adoption counts, or unaided-authorship claims were invented. The initial README-only status has been superseded by the recovered implementations documented in [RECOVERY.md](RECOVERY.md).

@@ -1,0 +1,139 @@
+{
+  "format": "portfolio-assets-v1",
+  "encoding": "gzip of length-prefixed JSON headers and binary payloads",
+  "parts": [
+    {
+      "name": "world-assets.001.gzpart",
+      "size": 4194304,
+      "sha256": "03234a0867837ea87f910719bf1315ca4f0c9633a97b8262aeae60c8b60e4b12",
+      "git_sha": "c8ec251ce9d3fd8438cd9117678859ec4993114a"
+    },
+    {
+      "name": "world-assets.002.gzpart",
+      "size": 4194304,
+      "sha256": "996b3481a34aa78d6d54324361bda10afafb5f7eb9b001a5807729a587771ec5",
+      "git_sha": "ecf50df54ed7a8cf198e0287cf00f6240c1d0ff9"
+    },
+    {
+      "name": "world-assets.003.gzpart",
+      "size": 4194304,
+      "sha256": "e11f1ed74036fda41a9b3d891e451f1384612956e0077c6cd2de5912d7a2c7ca",
+      "git_sha": "4c067946a624b0ef220f397768dce038ad5f5f59"
+    },
+    {
+      "name": "world-assets.004.gzpart",
+      "size": 4194304,
+      "sha256": "08af088c54d1173aa320db69cb50433ed52cd2b42a82314b365b99869964003e",
+      "git_sha": "bdf6f8802972cc879f302479b7559a704ae78bfd"
+    },
+    {
+      "name": "world-assets.005.gzpart",
+      "size": 4194304,
+      "sha256": "7c0869046806cfad11a3a6839aa381c91a54c00425256a71d31bee46d95a489b",
+      "git_sha": "a1f8b096649ddf0480ccd19f61228d835e2d4954"
+    },
+    {
+      "name": "world-assets.006.gzpart",
+      "size": 4194304,
+      "sha256": "12c978d05c4b79085a94c80507bb0edbc357462155f11c001ab5846371ef4c47",
+      "git_sha": "a3ddb380ffaf3b47d5946ad30ce9c92d2abbd81b"
+    },
+    {
+      "name": "world-assets.007.gzpart",
+      "size": 4194304,
+      "sha256": "37c30446fa3e276f97fa96c33f19c17bb609171664c7529f065f83a62667c667",
+      "git_sha": "3b13ae07eb857bbded83b41fda4fc68f1f51fc0e"
+    },
+    {
+      "name": "world-assets.008.gzpart",
+      "size": 4194304,
+      "sha256": "809b7545035e9fd9b80b4a8446481c6012054742ae511f0934bedb6071511403",
+      "git_sha": "b270664ccb405b0fbb6d10febf16d5154a146289"
+    },
+    {
+      "name": "world-assets.009.gzpart",
+      "size": 4194304,
+      "sha256": "efde01d2c0ba9280aedc57e7b053836479d1ac296cc5aa8c768ef7a06e482cef",
+      "git_sha": "67ef47e5e2595dbcbab415ddf46a6630309cac29"
+    },
+    {
+      "name": "world-assets.010.gzpart",
+      "size": 4194304,
+      "sha256": "17c7f305ce42bab379acfb5dff3efa09110db620d6168aa71e5ee980c447e174",
+      "git_sha": "6985ffb0de55be6b5e84d6292ef54e589c8928d3"
+    },
+    {
+      "name": "world-assets.011.gzpart",
+      "size": 4194304,
+      "sha256": "4ab4ea9542d4516e3596890b2b7f76a93f472f227c0210fe7d17372f71a3706b",
+      "git_sha": "74bd72a452f6bdf71f1d24fe0bbe83b7e620c14b"
+    },
+    {
+      "name": "world-assets.012.gzpart",
+      "size": 4194304,
+      "sha256": "4a9a0c83469d7f45935c0d5ff2da8a5774bcfdd055159c83a95cff50b0fba0a5",
+      "git_sha": "a1a09ffdd8affe834e3a0c20e14fc25accc47b66"
+    },
+    {
+      "name": "world-assets.013.gzpart",
+      "size": 4194304,
+      "sha256": "268a877c9ea7e120f2b96976d234f1b544cfaa02e117864834c816ea1380fa50",
+      "git_sha": "8531daa0008732b8ec4e85c9c7f79374ef865928"
+    },
+    {
+      "name": "world-assets.014.gzpart",
+      "size": 4194304,
+      "sha256": "79d012411527663bea65a9c42185cd192c3659b14011dd2b889c14837254a0aa",
+      "git_sha": "b3b4370f8f12403f65e82624bcbcfdf62fb06349"
+    },
+    {
+      "name": "world-assets.015.gzpart",
+      "size": 4194304,
+      "sha256": "9f25c76a3b1a4cdecff9c8ae263091b36e5e6be1ef2bdb7b30aff3da41e0517d",
+      "git_sha": "9d6c1719718ca4205ce4de47c033c0ec9e29d085"
+    },
+    {
+      "name": "world-assets.016.gzpart",
+      "size": 4194304,
+      "sha256": "0fe3e02e207946f3add102a06eb56467f330ed403c42ec6fc3c0151e04115a91",
+      "git_sha": "62412c0753cb2fa03ced2af2613ea612e89b5337"
+    },
+    {
+      "name": "world-assets.017.gzpart",
+      "size": 4194304,
+      "sha256": "b5b9f4da8565de1526db7be55521f0d977136f054e890fa71719bff50229acab",
+      "git_sha": "4d62d120bec9f5783f3d7613f8d622779be84797"
+    },
+    {
+      "name": "world-assets.018.gzpart",
+      "size": 4194304,
+      "sha256": "f655a195e644a47b4a81755241cbfe8a8316eb5651ea79ff5d76506f33ff81a1",
+      "git_sha": "33cc87d5239547479dea6806dd21e8178f3d8503"
+    },
+    {
+      "name": "world-assets.019.gzpart",
+      "size": 4194304,
+      "sha256": "4f3f92f7c402b47d40fc02f283e9b7397d4d498442db6dc64ad3dd3fd1dfb480",
+      "git_sha": "85bf88d4549d03e80512924c3654ef76129d1ee4"
+    },
+    {
+      "name": "world-assets.020.gzpart",
+      "size": 4194304,
+      "sha256": "86335e89e10d84f45f47b48da8f6b230eccc574b0c01b7d4540004d7033d0f1e",
+      "git_sha": "f40cf856893bbd4322a844a6f27e8a97c1b519e2"
+    },
+    {
+      "name": "world-assets.021.gzpart",
+      "size": 4194304,
+      "sha256": "b8e66ca981f21e5ea6ac376df27433aefa253adc77217b61008c28e16e0d2533",
+      "git_sha": "4cf748458f287f8b4a24dbcb3c5924f31a7987f9"
+    },
+    {
+      "name": "world-assets.022.gzpart",
+      "size": 1621349,
+      "sha256": "977a328cdc34367ba52b7927ac096d63e743d50413d4490bec995f9e094e837c",
+      "git_sha": "63ca29a771d953c0a6646fce4a9fe641221a419f"
+    }
+  ],
+  "files": 388
+}
