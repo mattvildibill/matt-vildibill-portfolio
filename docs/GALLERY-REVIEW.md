@@ -1,3 +1,5 @@
+> Historical record from the earlier bundled Sites deployment. Current deployment architecture is documented in DEPLOYMENT.md.
+
 # Gallery-first portfolio review — 2026-09-24
 
 ## Changes

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "redirects": [
+    {
+      "source": "/demos/fabric/:path*",
+      "destination": "https://fabric.mattvildibill.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/demos/denver/:path*",
+      "destination": "https://denver.mattvildibill.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/demos/fort-collins/:path*",
+      "destination": "https://fort-collins.mattvildibill.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/demos/painted/:path*",
+      "destination": "https://painted.mattvildibill.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/demos/gravity/:path*",
+      "destination": "https://gravity.mattvildibill.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/demos/f1/:path*",
+      "destination": "https://f1.mattvildibill.com/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}

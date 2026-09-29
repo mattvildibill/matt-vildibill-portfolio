@@ -1,3 +1,5 @@
+> Historical record from the earlier bundled Sites deployment. Current deployment architecture is documented in DEPLOYMENT.md.
+
 # Source provenance
 
 Inspected 2026-09-24. Only the six repositories authorized for this project were inspected.

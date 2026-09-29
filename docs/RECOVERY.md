@@ -1,3 +1,5 @@
+> Historical record from the earlier bundled Sites deployment. Current deployment architecture is documented in DEPLOYMENT.md.
+
 # Recovered project implementations
 
 The initial portfolio inspected all six authorized GitHub repositories. Four exports contained only a README. The follow-up recovered their full implementations from the corresponding original hosted Sites, without accessing other GitHub repositories.
