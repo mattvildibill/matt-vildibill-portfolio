@@ -5,6 +5,17 @@
   "installCommand": "npm ci",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mattvildibill.com"
+        }
+      ],
+      "destination": "https://mattvildibill.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/demos/fabric/:path*",
       "destination": "https://fabric.mattvildibill.com/:path*",
       "permanent": true
