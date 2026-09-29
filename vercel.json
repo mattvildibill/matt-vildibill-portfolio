@@ -16,6 +16,11 @@
       "permanent": true
     },
     {
+      "source": "/demos/fabric/index.html",
+      "destination": "https://fabric.mattvildibill.com/",
+      "permanent": true
+    },
+    {
       "source": "/demos/fabric/:path*",
       "destination": "https://fabric.mattvildibill.com/:path*",
       "permanent": true
