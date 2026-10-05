@@ -1,22 +1,60 @@
-'use client';
-import {useEffect,useRef,useState} from 'react';
-import {ArrowUpRight,Play,X,RotateCcw,Code2} from 'lucide-react';
-import {Button} from '@/components/ui/button';
-import {Dialog,DialogContent,DialogTitle,DialogDescription} from '@/components/ui/dialog';
+import Image from 'next/image';
+import {ArrowUpRight, Code2, Plus} from 'lucide-react';
 import {projects} from './projects';
-export default function Gallery(){
- const [selected,setSelected]=useState(projects[0]);const [running,setRunning]=useState(false);const [revision,setRevision]=useState(0);const [ready,setReady]=useState(false);const [hint,setHint]=useState('');const workspace=useRef<HTMLDivElement>(null);
- const select=(id:string)=>{setSelected(projects.find(p=>p.id===id)!);setRunning(false);setReady(false);requestAnimationFrame(()=>document.getElementById('project-lab')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'}))};
- const opener=useRef<HTMLElement|null>(null);
- const launch=(id=selected.id)=>{opener.current=document.activeElement as HTMLElement;setSelected(projects.find(p=>p.id===id)!);setReady(false);setHint('');setRunning(true)};
 
- const src=selected.url+'/?embed=portfolio';
- useEffect(()=>{if(!running||ready)return;const timer=setTimeout(()=>{setHint('Still loading? Open the project separately or restart it.');},20000);return()=>clearTimeout(timer)},[running,ready,selected.id,revision]);
- useEffect(()=>{if(!running)return;const receive=(event:MessageEvent)=>{const frame=workspace.current?.querySelector('iframe');if(event.origin!==new URL(selected.url).origin||event.source!==frame?.contentWindow)return;if(event.data?.type==='portfolio:ready')setReady(true);if(event.data?.type==='portfolio:close')setRunning(false);if(event.data?.type==='portfolio:hint'&&typeof event.data.hint==='string')setHint(event.data.hint.slice(0,240))};window.addEventListener('message',receive);return()=>window.removeEventListener('message',receive)},[running,selected.url]);
- return <><div className="project-grid">{projects.map((p,i)=><article className={'project-card '+(selected.id===p.id?'is-selected':'')} id={p.id} key={p.id}><button className={'project-poster poster-'+p.id} onClick={()=>launch(p.id)} aria-label={`Launch ${p.name}`}>{p.image?<img src={p.image} alt={p.caption} loading={i<2?"eager":"lazy"} decoding="async" width="800" height="500"/>:<svg viewBox="0 0 800 500" role="img" aria-label="Three-body orbit illustration"><path d="M180 250C180 70 620 70 620 250S180 430 180 250C180 90 620 410 620 250S180 90 180 250" fill="none" stroke="#d7fc70" strokeWidth="2"/><circle cx="180" cy="250" r="9" fill="#d7fc70"/><circle cx="513" cy="162" r="8" fill="#8cd3ee"/><circle cx="520" cy="340" r="8" fill="#eaa6b9"/></svg>}<span className="poster-action">Open app <ArrowUpRight size={16}/></span></button><div className="card-copy"><p className="eyebrow">0{i+1} / {p.category}</p><h3><button onClick={()=>select(p.id)}>{p.name}</button></h3><p>{p.line}</p><div className="card-bottom"><span>{p.tags.slice(0,2).join(' · ')}</span><span className="interactive-dot">Interactive</span></div></div></article>)}</div>
- <section className="project-lab" id="project-lab" aria-labelledby="lab-title"><div className="lab-heading"><div><p className="eyebrow">THE INTERACTIVE WORKBENCH</p><h3 id="lab-title">{selected.name}</h3></div><p>Explore the actual application.<br/>One project at a time, right here.</p></div><div className="lab-switcher" aria-label="Choose an interactive project">{projects.map(p=><Button key={p.id} variant="ghost" aria-pressed={selected.id===p.id} onClick={()=>{setSelected(p);setRunning(false);setReady(false);}}>{p.name}</Button>)}</div>
- <div className={'demo-cover cover-'+selected.id}>{selected.image&&<img src={selected.image} alt=""/>}<div className="cover-content"><span className="eyebrow">{selected.category}</span><h4>{selected.line}</h4><p>{selected.tryThis}</p><Button className="launch-button" onClick={()=>launch()}><Play size={17}/>Launch {selected.name}</Button><span className="load-note">Opens here · Loads only when you launch it</span></div></div>
- <Dialog open={running} onOpenChange={setRunning}><DialogContent className="project-viewer" showCloseButton={false} onInteractOutside={event=>event.preventDefault()} onCloseAutoFocus={event=>{event.preventDefault();opener.current?.focus()}}><div className="demo-workspace" ref={workspace}><div className="demo-toolbar"><div className="viewer-heading"><DialogTitle>{selected.name}</DialogTitle><span role="status" className="demo-status">{ready?(hint.startsWith('The laboratory')?'COULD NOT START':'PROJECT OPEN'):'LOADING…'}</span></div><div><a href={selected.url} aria-label={`Open ${selected.name} separately`} target="_blank" rel="noopener noreferrer">Open separately <ArrowUpRight size={14}/></a><Button variant="ghost" size="sm" aria-label="Restart project" title="Restart project" onClick={()=>{setRevision(v=>v+1);setReady(false);setHint('')}}><RotateCcw size={16}/></Button><Button variant="ghost" size="sm" aria-label="Close project" onClick={()=>setRunning(false)}><X size={18}/><span>Close</span></Button></div></div><DialogDescription className="viewer-instruction">{hint||selected.tryThis}</DialogDescription><iframe key={selected.id+revision} src={src} title={`${selected.name} interactive application`} allow="fullscreen" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div></DialogContent></Dialog>
- <p className="viewer-note">Choose an image to launch, or a project title for technical details. <span>3D views require WebGL. Each project opens on its own; closing it stops its rendering and background work.</span></p>
- <div className="lab-details"><div><p className="eyebrow">WHAT IT DOES</p><p className="lab-description">{selected.description}</p><div className="tags">{selected.tags.map(t=><span key={t}>{t}</span>)}</div><div className="project-links"><a className="text-link" href={'https://github.com/mattvildibill/'+selected.repo} target="_blank" rel="noopener noreferrer"><Code2 size={16}/>Project repository <ArrowUpRight size={14}/></a><a className="text-link" href={selected.url} target="_blank" rel="noopener noreferrer">Live project <ArrowUpRight size={14}/></a></div></div><div className="engineering"><p className="eyebrow">INSIDE THE BUILD</p>{selected.facts.map((f,i)=><div key={f}><span>0{i+1}</span><p>{f}</p></div>)}</div></div><details className="technical-detail" key={selected.id}><summary>Model boundaries & provenance <span>+</span></summary><p className="boundary">{selected.boundary} Each project is deployed independently from its own GitHub repository.</p></details></section></>
+export default function Gallery() {
+  return (
+    <div className="project-grid">
+      {projects.map((project, index) => (
+        <article className="project-card" id={project.id} key={project.id}>
+          <a
+            className={`project-poster poster-${project.id}`}
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${project.name} in a new tab`}
+          >
+            {project.image ? (
+              <Image src={project.image} alt={project.caption} width={800} height={500}
+                sizes="(max-width: 640px) 90vw, (max-width: 1000px) 44vw, 30vw"
+                priority={index < 3} />
+            ) : (
+              <svg viewBox="0 0 800 500" role="img" aria-label="Illustration of three-body orbit paths">
+                <path d="M180 250C180 70 620 70 620 250S180 430 180 250C180 90 620 410 620 250S180 90 180 250"
+                  fill="none" stroke="#d7fc70" strokeWidth="2" />
+                <circle cx="180" cy="250" r="9" fill="#d7fc70" />
+                <circle cx="513" cy="162" r="8" fill="#8cd3ee" />
+                <circle cx="520" cy="340" r="8" fill="#eaa6b9" />
+              </svg>
+            )}
+            <span className="poster-action">Open app <ArrowUpRight size={16} aria-hidden="true" /></span>
+          </a>
+          <div className="card-copy">
+            <p className="eyebrow">{String(index + 1).padStart(2, '0')} / {project.category}</p>
+            <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}<span className="sr-only"> (opens in a new tab)</span></a></h3>
+            <p className="project-lede">{project.line}</p>
+            <p className="project-description">{project.description}</p>
+            <ul className="tags" aria-label={`${project.name} technologies`}>
+              {project.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+            <div className="card-links">
+              <a href={project.url} target="_blank" rel="noopener noreferrer">Open app <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+              <a className="source-link" href={`https://github.com/mattvildibill/${project.repo}`} target="_blank" rel="noopener noreferrer"><Code2 size={16} aria-hidden="true" />Source<span className="sr-only"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+          <details className="project-details">
+            <summary>Engineering details <Plus size={17} aria-hidden="true" /></summary>
+            <div className="detail-content">
+              <h4>Inside the build</h4>
+              <ul>{project.facts.map(fact => <li key={fact}>{fact}</li>)}</ul>
+              <h4>Try it</h4>
+              <p>{project.tryThis}</p>
+              <h4>Model boundaries</h4>
+              <p>{project.boundary}</p>
+            </div>
+          </details>
+        </article>
+      ))}
+    </div>
+  );
 }

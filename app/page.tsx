@@ -1,5 +1,37 @@
-import {ArrowUpRight,MoveUpRight} from 'lucide-react';
+import {ArrowUpRight, ArrowUp} from 'lucide-react';
 import Gallery from './gallery';
-const github='https://github.com/mattvildibill/';
-function External({href,children,className=''}:{href:string;children:React.ReactNode;className?:string}){return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}<ArrowUpRight size={16}/><span className="sr-only"> (opens in a new tab)</span></a>}
-export default function Home(){return <><a href="#work" className="skip-link">Skip to projects</a><header className="site-header"><a className="identity" href="#top"><span className="monogram">mv</span><span>Matt Vildibill<span className="identity-role">Software engineer</span></span></a><nav aria-label="Main navigation"><a href="#work">All six projects</a><a href="#approach">Engineering notes</a><External href={github+'matt-vildibill-portfolio'} className="nav-source">Portfolio source</External></nav></header><main id="top"><section className="portfolio-intro"><div><p className="eyebrow">SIMULATION / DATA / EXPLORABLE WORLDS</p><h1>Software you can <span>step inside.</span></h1></div><p>Six projects, built to be explored.<br/> Open an application or inspect the engineering behind it.</p></section><section className="work-section" id="work" aria-label="All six projects"><Gallery/></section><section className="approach" id="approach"><div><p className="eyebrow">ENGINEERING NOTES</p><h2>The interesting part<br/>is how it behaves.</h2></div><div className="approach-text"><p>Simulation, visualization, and data-heavy interfaces share a problem: the user needs to see what a system is doing—and understand what the model can actually tell them.</p><p>These projects make that behavior inspectable through controls, comparisons, and explicit model boundaries. The source links go straight to the implementation.</p><p className="provenance">Project descriptions are grounded in implementation source. Each application includes its own model boundaries; each live project is maintained in its own repository.</p></div></section></main><footer><a href="#top" className="footer-name">Matt Vildibill <MoveUpRight size={25}/></a><span>Software, made explorable.</span><External href={github+'matt-vildibill-portfolio'}>Built in the open</External></footer></>}
+
+const github = 'https://github.com/mattvildibill';
+
+function External({href, children, className = ''}: {href: string; children: React.ReactNode; className?: string}) {
+  return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}<ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>;
+}
+
+export default function Home() {
+  return <>
+    <a href="#work" className="skip-link">Skip to projects</a>
+    <header className="site-header" id="top">
+      <a className="identity" href="#top"><span className="monogram" aria-hidden="true">mv</span><span>Matt Vildibill<span className="identity-role">Software engineer</span></span></a>
+      <nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#about">About</a><External href={github}>GitHub</External></nav>
+    </header>
+    <main>
+      <section className="portfolio-intro" aria-labelledby="intro-title">
+        <div><p className="eyebrow">SIMULATION / DATA / EXPLORABLE WORLDS</p><h1 id="intro-title">Software you can <span>step inside.</span></h1></div>
+        <p>Personal projects in simulation, geospatial graphics, and data interfaces. Open an app to explore, or look inside the implementation.</p>
+      </section>
+      <section className="work-section" id="work" aria-labelledby="work-title">
+        <div className="section-heading"><h2 id="work-title">Selected projects <span>06</span></h2><p>Each app opens in its own tab.</p></div>
+        <Gallery />
+      </section>
+      <section className="about" id="about" aria-labelledby="about-title">
+        <div><p className="eyebrow">ABOUT THE WORK</p><h2 id="about-title">Make complex systems<br />easier to understand.</h2></div>
+        <div className="about-copy">
+          <p>My professional background is in software engineering, integration, and test automation. These self-directed, AI-assisted projects explore another side of that work: making system behavior visible and interactive.</p>
+          <p>Each project pairs an explorable interface with inspectable source and clear limits on what its models and data can tell you.</p>
+          <External href={github}>More on GitHub</External>
+        </div>
+      </section>
+    </main>
+    <footer><span>Matt Vildibill<span className="footer-role">Software engineering · Interactive systems</span></span><div><External href={`${github}/matt-vildibill-portfolio`}>Portfolio source</External><a href="#top">Back to top <ArrowUp size={15} aria-hidden="true" /></a></div></footer>
+  </>;
+}

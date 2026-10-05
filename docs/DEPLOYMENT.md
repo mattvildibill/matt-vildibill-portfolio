@@ -8,7 +8,7 @@ Production branch: `main`.
 
 Use Node.js 24. Run `npm ci` when a lockfile is present, then `npm run build`. No application secrets or database are required. Never commit `.env` files or Vercel credentials.
 
-The portfolio launches one iframe at a time. Each project owns its runtime and assets. The embed bridge validates its parent origin; closing the viewer destroys the iframe and stops its work. Headers allow embedding from the portfolio. Original project attributions and model boundaries are retained.
+The portfolio opens each application directly on its own custom domain in a new browser tab. Each project owns its runtime and assets. The gallery is server-rendered and uses native expandable engineering notes; no project iframes or simulation runtimes are loaded into the portfolio. Original project attributions and model boundaries are retained.
 
 Existing ChatGPT-hosted versions have not been deleted or redirected. They remain active in Sites for existing shared links. New updates should be made in these GitHub repositories and deployed by Vercel; the legacy copies are retained for compatibility. If redirects are later installed on old hosts, preserve paths and query parameters.
 
@@ -35,11 +35,11 @@ The old `/demos/<project>/...` paths on the portfolio origin redirect to the cor
 3. Merge into `main`; Vercel builds and updates that project automatically. No upload from ChatGPT is required.
 4. If a release causes a regression, revert the Git commit. Vercel will deploy the revert. Its Instant Rollback can restore a previously working deployment while a fix is prepared.
 
-The portfolio project contains the gallery, previews and embed shell. It does not contain copies of the six applications. Edit `app/projects.ts` to change their descriptions, source links or production URLs. The project iframe is created only on launch and removed on close; no application iframe is loaded on the landing page.
+The portfolio project contains the gallery and preview images. It does not contain copies of the six applications. Edit `app/projects.ts` to change their descriptions, source links or production URLs. All live-project links open the standalone custom domain in a new tab.
 
 DNS is managed by the existing Vercel nameservers. The apex and six subdomains are attached to their corresponding Production environments. `www` uses a Vercel 308 redirect to the apex, preserving paths and query parameters. No registrar changes, paid upgrade, application secrets or database were needed for this migration. Existing mail and verification records were not altered.
 
-## Verification and limits
+## Migration verification (September 29, 2026)
 
 - All seven GitHub commits received successful Vercel deployment statuses.
 - The apex and all six project subdomains returned HTTP 200 over verified HTTPS.
