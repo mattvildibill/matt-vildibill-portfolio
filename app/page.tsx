@@ -16,22 +16,22 @@ export default function Home() {
     </header>
     <main>
       <section className="portfolio-intro" aria-labelledby="intro-title">
-        <div><p className="eyebrow">SIMULATION / DATA / EXPLORABLE WORLDS</p><h1 id="intro-title">Software you can <span>step inside.</span></h1></div>
-        <p>Personal projects in simulation, geospatial graphics, and data interfaces. Open an app to explore, or look inside the implementation.</p>
+        <div><p className="eyebrow">HI, I’M MATT</p><h1 id="intro-title">I like building things <span>and figuring them out.</span></h1></div>
+        <p>I’m a software engineer who loves learning by making things. Here are a few projects I’ve been working on, from gravity simulations to places you can wander around. Take a look, try them out, or dig into the code.</p>
       </section>
       <section className="work-section" id="work" aria-labelledby="work-title">
-        <div className="section-heading"><h2 id="work-title">Selected projects <span>06</span></h2><p>Each app opens in its own tab.</p></div>
+        <div className="section-heading"><h2 id="work-title">A few of my projects <span>06</span></h2><p>Open a project to try it out.</p></div>
         <Gallery />
       </section>
       <section className="about" id="about" aria-labelledby="about-title">
-        <div><p className="eyebrow">ABOUT THE WORK</p><h2 id="about-title">Make complex systems<br />easier to understand.</h2></div>
+        <div><p className="eyebrow">A BIT ABOUT ME</p><h2 id="about-title">Always something<br />new to learn.</h2></div>
         <div className="about-copy">
-          <p>My professional background is in software engineering, integration, and test automation. These self-directed, AI-assisted projects explore another side of that work: making system behavior visible and interactive.</p>
-          <p>Each project pairs an explorable interface with inspectable source and clear limits on what its models and data can tell you.</p>
-          <External href={github}>More on GitHub</External>
+          <p>My background is in software engineering, integration, and test automation. These projects are a chance to follow my curiosity and learn by building.</p>
+          <p>I use AI tools to help develop these projects. You can explore each app, see what it’s built with, and read the code on GitHub.</p>
+          <External href={github}>Find me on GitHub</External>
         </div>
       </section>
     </main>
-    <footer><span>Matt Vildibill<span className="footer-role">Software engineering · Interactive systems</span></span><div><External href={`${github}/matt-vildibill-portfolio`}>Portfolio source</External><a href="#top">Back to top <ArrowUp size={15} aria-hidden="true" /></a></div></footer>
+    <footer><span>Matt Vildibill<span className="footer-role">Software engineer · Curious builder</span></span><div><External href={`${github}/matt-vildibill-portfolio`}>Portfolio source</External><a href="#top">Back to top <ArrowUp size={15} aria-hidden="true" /></a></div></footer>
   </>;
 }

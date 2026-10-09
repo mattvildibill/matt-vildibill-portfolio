@@ -5,10 +5,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://mattvildibill.com'),
   alternates: {canonical: '/'},
   title: 'Matt Vildibill | Software Engineer',
-  description: 'Personal software projects by Matt Vildibill: network and orbital simulation, geospatial 3D worlds, and race data interfaces. Explore the apps and their source.',
+  description: 'I’m Matt, a software engineer who likes building things and learning along the way. Explore my projects, try the apps, and take a look at the code.',
   openGraph: {
     title: 'Matt Vildibill | Software Engineer',
-    description: 'Simulation, data, and explorable worlds. Six interactive software projects with source and model boundaries.',
+    description: 'I’m Matt, a software engineer who likes building things and learning along the way. Explore my projects, try the apps, and take a look at the code.',
     url: 'https://mattvildibill.com',
     type: 'website',
     images: [{url: '/images/fabric-preview.webp', width: 1092, height: 750, alt: 'Fabric Reality Lab network visualization'}],
