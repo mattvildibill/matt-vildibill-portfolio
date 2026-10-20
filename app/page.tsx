@@ -1,4 +1,4 @@
-import { ArrowUp, ArrowUpRight, Mail } from 'lucide-react';
+import { ArrowUpRight, Mail } from 'lucide-react';
 import type { ReactNode } from 'react';
 import Gallery from './gallery';
 
@@ -20,61 +20,38 @@ export default function Home() {
     <>
       <a href="#work" className="skip-link">Skip to projects</a>
       <header className="site-header" id="top">
-        <a className="identity" href="#top">
+        <span id="contact" className="legacy-anchor" aria-hidden="true" />
+        <span id="about" className="legacy-anchor" aria-hidden="true" />
+        <div className="identity">
           <span className="monogram" aria-hidden="true">mv</span>
           <span>Matt Vildibill<span className="identity-role">Software engineer</span></span>
-        </a>
-        <nav aria-label="Main navigation">
-          <a href="#work">Projects</a><a href="#contact">Contact</a>
-          <span className="desktop-link"><External href={github}>GitHub</External></span>
+        </div>
+        <nav className="contact-links" aria-label="Contact and profiles">
+          <a href={email} aria-label="Email Matt Vildibill"><Mail size={16} aria-hidden="true" />Email</a>
+          <External href={linkedin}>LinkedIn</External>
+          <External href={github}>GitHub</External>
         </nav>
       </header>
       <main>
         <section className="portfolio-intro" aria-labelledby="intro-title">
           <div>
-            <p className="eyebrow">HI, I’M MATT</p>
             <h1 id="intro-title">I like building things <span>and figuring them out.</span></h1>
           </div>
           <div className="intro-copy">
-            <p>I’m a software engineer with a background in integration and test automation. These are a few projects I’ve built around art, cities, racing, and simulation.</p>
-            <div className="intro-links">
-              <a href={email}><Mail size={16} aria-hidden="true" />Email me</a>
-              <External href={linkedin}>LinkedIn</External>
-            </div>
+            <p>My background is in integration and test automation. I like taking a problem apart, trying a few approaches, and seeing what actually works.</p>
+            <p>These projects usually start with something I want to understand or a tool I wish I had.</p>
           </div>
         </section>
         <section className="work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
-            <h2 id="work-title">A few of my projects <span>06</span></h2>
-            <p>Pick something to explore.</p>
+            <h2 id="work-title">Projects</h2>
           </div>
           <Gallery />
         </section>
-        <section className="about" id="contact" aria-labelledby="contact-title">
-          <span id="about" className="legacy-anchor" aria-hidden="true" />
-          <div>
-            <p className="eyebrow">LET’S TALK</p>
-            <h2 id="contact-title">Looking for my next<br />software engineering role.</h2>
-          </div>
-          <div className="about-copy">
-            <p>I like projects that give me something to investigate: how a small change affects an orbit, where a message gets delayed, or how to turn a painting into a place.</p>
-            <p>If you’d like to talk about the work or a role, you can reach me here.</p>
-            <div className="contact-links">
-              <a href={email}>mattvildibill4@gmail.com<Mail size={16} aria-hidden="true" /></a>
-              <External href={linkedin}>LinkedIn</External>
-              <External href={github}>GitHub</External>
-            </div>
-          </div>
-        </section>
       </main>
       <footer>
-        <span>Matt Vildibill<span className="footer-role">Software engineer</span></span>
-        <div>
-          <a href={email}>Email</a>
-          <External href={linkedin}>LinkedIn</External>
-          <External href={`${github}/matt-vildibill-portfolio`}>Portfolio source</External>
-          <a href="#top">Back to top<ArrowUp size={15} aria-hidden="true" /></a>
-        </div>
+        <p>Open to software engineering roles.</p>
+        <External href={`${github}/matt-vildibill-portfolio`}>Portfolio source</External>
       </footer>
     </>
   );

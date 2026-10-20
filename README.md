@@ -1,6 +1,6 @@
 # Matt Vildibill · Interactive projects
 
-My personal portfolio: a painting archive, gravity and network simulations, two city explorers, and an F1 dashboard. Each project runs on its own domain. The portfolio stays a small, server-rendered gallery with direct launch links and expandable engineering notes.
+My personal portfolio: network and gravity simulations, an F1 dashboard, two city explorers, and an archive of my mom’s paintings. Each project runs on its own domain. The portfolio stays a small, server-rendered page with direct launch links and optional build notes.
 
 ## Development
 
@@ -26,6 +26,6 @@ The gallery, contact links and native details work without JavaScript. No databa
 
 Artwork belongs to its original artist; the painting project distinguishes the preserved originals from its interpreted scenery. Each project retains its own data and third-party credits. Development uses AI-assisted tools; the implementation and validation are available in the project repositories.
 
-The site links to email, LinkedIn and GitHub. There is no resume download or contact-form service.
+Email, LinkedIn and GitHub appear together in the header. The footer links to this site's source. There is no resume download or contact-form service.
 
 See [deployment](docs/DEPLOYMENT.md) and [sources and preview provenance](docs/SOURCES.md).
