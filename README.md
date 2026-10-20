@@ -1,10 +1,10 @@
-# Matt Vildibill — Interactive Systems
+# Matt Vildibill · Interactive projects
 
-Personal portfolio built with Next.js, React, and TypeScript. Six independent applications open directly on their custom domains, in their own browser tabs.
+My personal portfolio: a painting archive, gravity and network simulations, two city explorers, and an F1 dashboard. Each project runs on its own domain. The portfolio stays a small, server-rendered gallery with direct launch links and expandable engineering notes.
 
 ## Development
 
-Node.js 24.
+Use Node.js 24.
 
 ```sh
 npm ci
@@ -14,6 +14,18 @@ npm run typecheck
 npm run build
 ```
 
-`app/projects.ts` owns the project catalog, GitHub links, and permanent live URLs. `app/gallery.tsx` is a server-rendered gallery with native expandable engineering notes. No application runtimes, iframes, or world assets are loaded into the portfolio.
+The gallery, contact links and native details work without JavaScript. No database, account, API key or project runtime is needed to load this page.
 
-See [deployment architecture](docs/DEPLOYMENT.md).
+## Editing the portfolio
+
+- `app/projects.ts`: project order, descriptions, launch URLs, source links and implementation notes.
+- `app/gallery.tsx`: project cards and native expandable details.
+- `app/page.tsx`: introduction and contact links.
+- `app/portfolio.css`: responsive layout and visual styles.
+- `public/images/`: actual project captures used as previews.
+
+Artwork belongs to its original artist; the painting project distinguishes the preserved originals from its interpreted scenery. Each project retains its own data and third-party credits. Development uses AI-assisted tools; the implementation and validation are available in the project repositories.
+
+The site links to email, LinkedIn and GitHub. There is no resume download or contact-form service.
+
+See [deployment](docs/DEPLOYMENT.md) and [sources and preview provenance](docs/SOURCES.md).
